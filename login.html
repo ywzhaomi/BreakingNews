@@ -5,11 +5,98 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>大事件/登录-注册</title>
+    <!-- 导入layui样式文件 -->
+    <link rel="stylesheet" href="./assets/lib/layui/css/layui.css">
+    <link rel="stylesheet" href="./assets/css/login.css">
 </head>
 
 <body>
+    <!-- 这是log区域 -->
+    <!-- 使用Layui库中的layui-main版心样式，使用之前需要导入Layui.css的样式文件 -->
+    <div class="layui-main"><img src="./assets/images/logo.png" alt=""></div>
 
+    <!-- 登录注册区域 -->
+    <!-- lay-verify:表单的验证规则 -->
+    <div class="loginAndregBox">
+        <div class="titie-box"></div>
+        <!-- 登录的div -->
+        <div class="login-box">
+            <!-- 使用layui的登录表单 -->
+            <form class="layui-form" id="form_login">
+                <!-- 用户名 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-username"></i>
+                    <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名"
+                        autocomplete="off" class="layui-input">
+                </div>
+                <!-- 密码 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password"></i>
+                    <!-- 注意：lay-verify="required|pwd"  ；|前后不要有空格 否则不起效果  fuck!!!!!!!!! -->
+                    <input type="password" name="password" required lay-verify="required|pwd" placeholder="请输入密码"
+                        autocomplete="off" class="layui-input">
+                </div>
+                <!-- 按钮也要独占一行 所以用div的form-item包裹按钮 -->
+                <!-- 登录按钮 -->
+                <div class="layui-form-item ">
+                    <button class="layui-btn layui-btn-fluid layui-btn-normal " lay-submit
+                        lay-filter="formDemo">登录</button>
+                </div>
+                <!-- href="javascript:;" 保证点击a链接的时候不会跳转 -->
+                <div class="layui-form-item links">
+                    <a href="javascript:;" id="link_reg">注册账号</a>
+                </div>
+            </form>
+
+        </div>
+        <!-- 注册的div -->
+        <div class="reg-box">
+            <!-- 注册的表单 -->
+            <form class="layui-form" id="form_reg">
+                <!-- 用户名 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-username"></i>
+                    <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名"
+                        autocomplete="off" class="layui-input">
+                </div>
+                <!-- 密码 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password"></i>
+                    <!-- 补充注册表单密码框的pwd校验规则 -->
+                    <input type="password" name="password" required lay-verify="required|pwd" placeholder="请输入密码" autoc
+                        omplete="off" class="layui-input">
+                </div>
+                <!-- 确认密码 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password"></i>
+                    <input type="password" name="repassword" required lay-verify="required|pwd|repwd"
+                        placeholder="再次确认密码" autocomplete="off" class="layui-input">
+                </div>
+                <!-- 按钮也要独占一行 所以用div的form-item包裹按钮 -->
+                <!-- 注册按钮 -->
+                <div class="layui-form-item ">
+                    <button class="layui-btn layui-btn-fluid layui-btn-normal " lay-submit
+                        lay-filter="formDemo">注册</button>
+
+                </div>
+                <!-- href="javascript:;" 保证点击a链接的时候不会跳转 -->
+                <div class="layui-form-item links">
+                    <a href="javascript:;" id="link_login">登录账号</a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <!-- 导入Layui的js文件 -->
+    <script src="./assets/lib/layui/layui.all.js "></script>
+    <!-- 导入jquery -->
+    <script src="./assets/lib/jquery.js">  </script>
+    <script src="./assets/js/baseApi.js"></script>
+    <!-- 导入login.js -->
+    <script src="./assets/js/login.js"></script>
 </body>
 
 </html>
+
+<!-- 类名用中横线- id名用下划线_ -->

@@ -1,0 +1,52 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background: url('/assets/images/login_bg.jpg')  no-repeat center ;
+    /* 设置背景图片的填充模式 cover：等比例缩放背景图片使得填充容器 */
+    background-size: cover;
+}
+.loginAndregBox{
+    position: absolute;
+    left: 50%;    
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    height: 310px;
+    background-color: #fff;
+
+}
+.titie-box{
+    height: 60px;
+     background: url(/assets/images/login_title.png) no-repeat center ;
+}
+
+/* 注册盒子默认隐藏 */
+.reg-box{
+    display: none;
+}
+
+.layui-form{
+    padding: 0 30px;
+}
+.links{
+    display: flex;
+    justify-content: flex-end;
+}
+.links a{
+    font-size: 12px;
+}
+/* 子绝父相控制字体图标位置 */
+/* 父 */
+.layui-form-item{
+    position: relative;
+}
+.layui-icon{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+.layui-input{
+    padding-left: 32px;
+}
